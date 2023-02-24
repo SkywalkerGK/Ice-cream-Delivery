@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>จันทร์ไรเดอร์</title>
-</head>
-<body>
-    {% include 'app_general/components/site_header.html' %}
-    <div>
-        <h1>จันทร์ไรเดอร์</h1>
-        <p>ไอศครีมอร่อย ส่งบ่อย ส่งแม่น</p>
-    </div>
-    {% include 'app_general/components/site_footer.html' %}
-</body>
-</html>
+{% extends 'app_general/components/base.html' %}
+
+{% block content %}
+<div>
+    <h1>จันทร์ไรเดอร์</h1>
+    <p>ไอศครีมอร่อย ส่งบ่อย ส่งแม่น</p>
+</div>
+{% endblock %}
+
