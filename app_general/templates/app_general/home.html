@@ -7,25 +7,11 @@
     <title>จันทร์ไรเดอร์</title>
 </head>
 <body>
-    <header style="background-color:lightpink;">
-        <a href="{% url 'home' %}">จันทร์ไรเดอร์</a>
-        <a href="{% url 'foods' %}">เมนูทั้งหมด</a>
-        <a href="{% url 'about' %}">เกี่ยวกับ</a>
-    </header>
+    {% include 'app_general/components/site_header.html' %}
     <div>
         <h1>จันทร์ไรเดอร์</h1>
         <p>ไอศครีมอร่อย ส่งบ่อย ส่งแม่น</p>
     </div>
-    <footer style="background-color: lightblue;">
-        <h5>ติดตามความเคลื่อนไหวและโปรโมชั่นได้ที่</h5>
-        <p>
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
-            <a href="#">Instagram</a>
-        </p>
-        <p>Copyright 2021-2022 Junraider. All right reserved</p>
-    </footer>
-    
-    
+    {% include 'app_general/components/site_footer.html' %}
 </body>
 </html>
