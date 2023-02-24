@@ -6,4 +6,5 @@ def home(request):
     return render(request,'app_general/home.html')
 
 def about(request):
+    return render(request,'app_general/about.html')
     return HttpResponse('เกี่ยวกับเรา')
