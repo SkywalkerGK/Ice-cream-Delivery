@@ -8,10 +8,11 @@
     {% for food in foods %}
     <div style="background-color: rgb(234, 194, 236);">
         <h3><a href="{% url 'food' food.id %}"> {{food.title}} </a></h3>
-        <p>{{food.price}} บาท</p>
+        <p>{{food.price|floatformat:'g'}} บาท</p>
         {% if food.is_premium %}
             <p>***เมนูสุด Premium</p>
         {% endif %} 
+        <p>โปรโมชั่นถึงวันที่ {{food.promotion_end_at|date:'j N Y'}}</p>
     </div>
         {% empty %}  
         <p>ไม่มีเธอ ไม่มีเธอ</p>
