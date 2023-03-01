@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'project_jrd.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'mysql.connector.django',
+        'NAME': 'django_junraider_x',
+        'USER': 'root',
+        'PASSWORD': '123456789',
+        'HOST':'127.0.0.1',
+        'PORT':'3306'
     }
 }
 
