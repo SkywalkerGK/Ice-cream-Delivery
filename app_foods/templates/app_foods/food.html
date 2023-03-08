@@ -6,7 +6,16 @@
 {% if food is not none %}
 <div >
     <h3><a> {{food.title}} </a></h3>
-    <p>{{food.price|floatformat:'g'}} บาท</p>
+    {% if food.special_price is not None %}
+
+        <p>
+            <span>{{ food.special_price|floatformat:'g' }} บาท</span>
+            <del>{{food.price|floatformat:'g'}} บาท</del>
+        </p>
+
+    {% else%}
+        <p>{{food.price|floatformat:'g'}} บาท</p>
+    {% endif %}
     {% if food.is_premium %}
         <p>***เมนูสุด Premium</p>
     {% endif %} 

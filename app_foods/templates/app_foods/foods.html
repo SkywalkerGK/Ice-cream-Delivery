@@ -8,7 +8,15 @@
     {% for food in foods %}
     <div style="background-color: rgb(234, 194, 236);">
         <h3><a href="{% url 'food' food.id %}"> {{food.title}} </a></h3>
-        <p>{{food.price|floatformat:'g'}} บาท</p>
+        {% if food.special_price is not None %}
+            <p>
+                <span>{{ food.special_price|floatformat:'g' }} บาท</span>
+                <del>{{food.price|floatformat:'g'}} บาท</del>
+            </p>
+
+        {% else%}
+            <p>{{food.price|floatformat:'g'}} บาท</p>
+        {% endif %}
         {% if food.is_premium %}
             <p>***เมนูสุด Premium</p>
         {% endif %} 
