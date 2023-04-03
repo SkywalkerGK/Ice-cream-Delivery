@@ -1,9 +1,7 @@
 from django.http import HttpResponseRedirect
-from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse
-from app_foods.models import Food
-from app_general.forms import SubscriptionForm
+from app_general.forms import SubscriptionModelForm
 from .models import Subscription
 
 
@@ -17,18 +15,12 @@ def about(request):
 
 def subscription(request):
     if request.method== 'POST':
-        form = SubscriptionForm(request.POST) 
+        form = SubscriptionModelForm(request.POST) 
         if form.is_valid():
-            data = form.cleaned_data
-            new_sub = Subscription()
-            new_sub.name = data['name']
-            new_sub.email = data['email']
-            new_sub.save()
-            new_sub.food_set.set(data['food_set'])
-            print(data)
+            form.save()
             return HttpResponseRedirect(reverse('subscription_thankyou'))
     else:
-        form = SubscriptionForm()
+        form = SubscriptionModelForm()
     context =  {'form': form}
     return render(request, 'app_general/subscription_form.html',context)
 
