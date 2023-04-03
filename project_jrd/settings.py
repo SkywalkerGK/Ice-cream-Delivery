@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'mysql.connector.django',
         'NAME': 'django_junraider_x',
         'USER': 'root',
-        'PASSWORD': '123456789',
+        'PASSWORD': '0817260364',
         'HOST':'127.0.0.1',
         'PORT':'3306'
     }
