@@ -1,4 +1,5 @@
 {% extends 'app_general/components/base.html' %}
+{% load static %}
 
 {% block site_title %}เมนูทั้งหมด | {% endblock %}
 
@@ -7,6 +8,9 @@
     <h2>เมนู อร่อย ส่งบ่อย ส่งแม่น</h2>
     {% for food in foods %}
     <div style="background-color: rgb(234, 194, 236);">
+        <div>
+            <img src="{% static food.image_relative_url %}">
+        </div>
         <h3><a href="{% url 'food' food.id %}"> {{food.title}} </a></h3>
         {% if food.special_price is not None %}
             <p>

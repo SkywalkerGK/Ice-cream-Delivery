@@ -1,9 +1,32 @@
 {% extends 'app_general/components/base.html' %}
+{% load static %}
 
 {% block content %}
 <div>
     <h1>จันทร์ไรเดอร์</h1>
     <p>ไอศครีมอร่อย ส่งบ่อย ส่งแม่น</p>
 </div>
+
+<section>
+    <h4>อธิบายอะไรสักหน่อย</h4>
+    <div>
+        <div>
+            <img src="{% static 'app_general/home-about-1.jpg' %}">
+        </div>    
+        <p>บริการจัดส่งไอศครีมอร่อยถึงมือคุณ เดือนละครั้ง ในวันจันทร์ที่คุณสะดวกรับ</p>
+    </div>
+    <div>
+        <div>
+            <img src="{% static 'app_general/home-about-2.jpg' %}">
+        </div>    
+        <p>จันทร์ไรแมน คือ พนักงานส่งไอศครีมมีไวแบบไม่ย้อนศร และฉีดวัคซันครบ 2 เข็ม</p>
+    </div>
+    <div>
+        <div>
+            <img src="{% static 'app_general/home-about-3.jpg' %}">
+        </div>    
+        <p> ไอศครีมทุกรสสร้างสรรค์อย่างพิถีพิถัน ไม่หวั่นแม้ออเดอร์มามาก</p>
+    </div>        
+</section>
 {% endblock %}
 

@@ -1,5 +1,10 @@
+{% load static %}
 <header style="background-color:lightpink;">
-    <a href="{% url 'home' %}">จันทร์ไรเดอร์</a>
+    <a href="{% url 'home' %}">
+    <img src="{% static 'app_general/logo.png' %}">
+    <span>จันทร์ไรเดอร์</span>
+    </a>
+    
     <a href="{% url 'foods' %}">เมนูทั้งหมด</a>
     <a href="{% url 'about' %}">เกี่ยวกับ</a>
 </header>
