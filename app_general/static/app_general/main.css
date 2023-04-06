@@ -75,6 +75,10 @@ a {
   text-align: center;
 }
 
+.text-gray {
+  color: #888888;
+}
+
 .button {
   color: white;
   background-color: #333333;
@@ -124,6 +128,11 @@ a {
   row-gap: 16px;
   margin-bottom: 16px;
 }
+
+.grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
 /*
 @media  and (min-width: 720px) {
   .grid-2{
@@ -192,4 +201,10 @@ a {
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
   margin-top: 0px;
   margin-bottom: 24px;
+}
+
+/* Food */
+.food-title a:not(:hover){
+  color: #111111;
+  text-decoration: none;
 }

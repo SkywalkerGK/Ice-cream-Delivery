@@ -4,31 +4,43 @@
 {% block site_title %}{{food.title}} | {% endblock %}
 
 {% block content %}
-{% if food is not none %}
-<div >
-    <div>
-        <img src="{% static food.image_relative_url %}">
+<section class="content-section content-section-single">
+    <div class="content-container">
+        {% if food is not none %}
+            <div class="grid grid-2">
+                    <img class="image-block" src="{% static food.image_relative_url %}">
+                    <div>
+                        <h3><a> {{food.title}} </a></h3>
+                        {% if food.special_price is not None %}
+                
+                            <p>
+                                <span>{{ food.special_price|floatformat:'g' }} บาท</span>
+                                <del class="text-gray">{{food.price|floatformat:'g'}} บาท</del>
+                            </p>
+                
+                        {% else%}
+                            <p>{{food.price|floatformat:'g'}} บาท</p>
+                        {% endif %}
+                        {% if food.is_premium %}
+                            <p>***เมนูสุด Premium</p>
+                        {% endif %} 
+                        <p>โปรโมชั่นถึงวันที่ {{food.promotion_end_at|date:'j N Y'}}</p>
+                        <p>
+                            เด็กชายและเด็กหญิงยืนอยู่ท่ามกลางความวุ่นวายภายใต้ท้องฟ้าที่ไม่เป็นที่รู้จัก คุณเป็น คู่แฝดเดินทางผ่านโลกนับไม่ถ้วนระหว่างการเดินทางของคุณ เมื่อลงไปยังทวีปที่เรียกว่า Teyvat เขาหวังว่าเขาจะมีความสุขกับเวลาที่นี่ แต่เมื่อคุณตื่นขึ้นมาท่ามกลางดวงดาวที่พร่างพรายคุณมองเห็นโลกในความสับสนความหายนะที่ทำลายล้างโลก ... คุณพยายามออกจากสถานที่แห่งนี้และไปยังโลกหน้า แต่ จากนั้นก็เป็นพระเจ้าที่ไม่รู้จัก ยืนอยู่ตรงหน้าคุณ เทพองค์นี้ไร้ที่ติลอยอยู่เหนือโลกแห่งความโกลาหล มองไปที่คุณ
+                        </p>
+                        <p>
+                            <a class="button button-primary" href="{% url 'subscription' %}">ลงทะเบียนรับโปรโมชั่น</a>
+                        </p>
+                    </div>
+
+            </div>
+        {% else %}
+            <p>ไม่พบเมนูนี้</p>
+        {% endif %}        
     </div>
-    <h3><a> {{food.title}} </a></h3>
-    {% if food.special_price is not None %}
+</section>
 
-        <p>
-            <span>{{ food.special_price|floatformat:'g' }} บาท</span>
-            <del>{{food.price|floatformat:'g'}} บาท</del>
-        </p>
 
-    {% else%}
-        <p>{{food.price|floatformat:'g'}} บาท</p>
-    {% endif %}
-    {% if food.is_premium %}
-        <p>***เมนูสุด Premium</p>
-    {% endif %} 
-    <p>โปรโมชั่นถึงวันที่ {{food.promotion_end_at|date:'j N Y'}}</p>
-    <p>เด็กชายและเด็กหญิงยืนอยู่ท่ามกลางความวุ่นวายภายใต้ท้องฟ้าที่ไม่เป็นที่รู้จัก คุณเป็น คู่แฝดเดินทางผ่านโลกนับไม่ถ้วนระหว่างการเดินทางของคุณ เมื่อลงไปยังทวีปที่เรียกว่า Teyvat เขาหวังว่าเขาจะมีความสุขกับเวลาที่นี่ แต่เมื่อคุณตื่นขึ้นมาท่ามกลางดวงดาวที่พร่างพรายคุณมองเห็นโลกในความสับสนความหายนะที่ทำลายล้างโลก ... คุณพยายามออกจากสถานที่แห่งนี้และไปยังโลกหน้า แต่ จากนั้นก็เป็นพระเจ้าที่ไม่รู้จัก ยืนอยู่ตรงหน้าคุณ เทพองค์นี้ไร้ที่ติลอยอยู่เหนือโลกแห่งความโกลาหล มองไปที่คุณ</p>
-</div>
 
-{% else %}
-    <p>ไม่พบเมนูนี้</p>
-{% endif %}
 
 {% endblock %}
