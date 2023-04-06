@@ -2,31 +2,50 @@
 {% load static %}
 
 {% block content %}
-<div>
-    <h1>จันทร์ไรเดอร์</h1>
-    <p>ไอศครีมอร่อย ส่งบ่อย ส่งแม่น</p>
-</div>
+<section class="home-landing-section">
+    <h1 class="home-landing-text">จันทร์ไรเดอร์</h1>
+    <h5 class="home-landing-text">ไอศครีมอร่อย ส่งบ่อย ส่งแม่น</h5>
+    <h6 class="home-landing-text">จัดส่งไอศครีมรสโปรดของคุณ ทุกวันจันทร์แรก จันทร์ที่สอง 
+        หรือจันทร์ที่สาม ของแต่ละเดอน
+    </h6>   
+    <p>
+        <a class="button" href="{% url 'foods' %}">ดูเมนูทั้งหมด</a>
+        <a class="button button-primary" href="{% url 'subscription' %}">ลงทะเบียนรับโปรโมชั่น</a>
+    </p>
+</section>
+<section class="content-section">
+    <div class="content-container">
+        <h4 class="content-title text-center">อธิบายอะไรสักหน่อย</h4>
+        <div class="grid">
+            <div>
+            
+                <img class="image-block" src="{% static 'app_general/home-about-1.jpg' %}">
+                
+            <p>บริการจัดส่งไอศครีมอร่อยถึงมือคุณ เดือนละครั้ง ในวันจันทร์ที่คุณสะดวกรับ</p>
+        </div>
+        <div>
+            
+                <img class="image-block" src="{% static 'app_general/home-about-2.jpg' %}">
+                
+            <p>จันทร์ไรแมน คือ พนักงานส่งไอศครีมมีไวแบบไม่ย้อนศร และฉีดวัคซันครบ 2 เข็ม</p>
+        </div>
+        <div>
+            
+                <img class="image-block" src="{% static 'app_general/home-about-3.jpg' %}">
+                
+            <p> ไอศครีมทุกรสสร้างสรรค์อย่างพิถีพิถัน ไม่หวั่นแม้ออเดอร์มามาก</p>
+        </div>                   
+        </div>
+        <p class="text-center">
+            <a class="button" href="{% url 'about' %}">เกี่ยวกับจันทร์ไรเดอร์</a>
 
-<section>
-    <h4>อธิบายอะไรสักหน่อย</h4>
-    <div>
-        <div>
-            <img src="{% static 'app_general/home-about-1.jpg' %}">
-        </div>    
-        <p>บริการจัดส่งไอศครีมอร่อยถึงมือคุณ เดือนละครั้ง ในวันจันทร์ที่คุณสะดวกรับ</p>
+        </p>
+
+        
+        
+
     </div>
-    <div>
-        <div>
-            <img src="{% static 'app_general/home-about-2.jpg' %}">
-        </div>    
-        <p>จันทร์ไรแมน คือ พนักงานส่งไอศครีมมีไวแบบไม่ย้อนศร และฉีดวัคซันครบ 2 เข็ม</p>
-    </div>
-    <div>
-        <div>
-            <img src="{% static 'app_general/home-about-3.jpg' %}">
-        </div>    
-        <p> ไอศครีมทุกรสสร้างสรรค์อย่างพิถีพิถัน ไม่หวั่นแม้ออเดอร์มามาก</p>
-    </div>        
+    
 </section>
 {% endblock %}
 

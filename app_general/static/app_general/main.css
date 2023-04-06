@@ -18,6 +18,178 @@
 }
 
 /* global */
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
 html {
+  color: #333333;
   font-family: 'Mitr',sans-serif;
+  font-weight: 300;
+}
+
+h1,h2,h3,h4,h5,h6 { /* กำหนดขนาด */
+  color: #111111;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-top: 0px;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-top: 0px;
+  margin-bottom: 16px;
+}
+
+a {
+  color: #277ef8;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.button {
+  color: white;
+  background-color: #333333;
+  border: none; /* ไม่มีเส้นขอบ */
+  border-radius: 8px;
+  font-weight: 400;
+  line-height: 1;
+  text-decoration: none;  /* ลบเส้นใต้ */
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 16px;
+
+}
+
+.button-primary{
+  background-color: #277ef8;
+}
+
+.image-block{
+  display: block;
+  max-width: 100%;
+  margin-bottom: 12px; /* ระยะห่างจาก Layout */
+  
+}
+
+.content-section{
+  padding: 64px 16px; /* ระยะจากขอบบนล่างซ้ายขวา */
+}
+
+.content-section-single{
+  min-height: calc(100vh - 120px);
+}
+.content-container{
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-title {
+  margin-bottom: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 16px;
+  margin-bottom: 16px;
+}
+/*
+@media  and (min-width: 720px) {
+  .grid-2{
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid-3{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+*/
+
+
+/* Site Header */
+.site-header {
+  background-color: white;
+  border-bottom: 1px solid rgb(215, 215, 215);
+  box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: flex-start;
+  height: 50px;
+}
+
+.site-header-item {
+  color: #111111;
+  background-color: rgba(0,0,0,0); /* สีใส */
+  font-weight: 400;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0px 10px; /* ระยะห่าง แนวตั้ง แนวนอน*/
+  transition: background-color 300ms; /* เอาเม้าส์จ่อแล้วเปลี่ยนสี Fade*/
+}
+
+.site-header-item:hover{
+  background-color: rgba(0,0,0,0.1); /* เอาเม้าส์จ่อแล้วเปลี่ยนสี*/
+}
+
+.site-header-brand img {  /* !!!!img!!! ตกแต่งรูปภาพตรง header*/
+  display: inline-block;
+  height: 32px;
+  margin-right: 8px;
+}
+
+/* Sitet footer */
+.site-footer{
+  background-color: rgb(232, 232, 232);
+  text-align: center; /* จัดให้กลาง*/
+  padding: 16px;
+}
+.site-footer-copyright{
+  font-size: 12px;
+}
+
+/* Home-landing-section */
+.home-landing-section{
+  background-color: #bcb6b6;
+  background-image: url('home-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 120px 16px;
+}
+
+.home-landing-text{
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+  margin-top: 0px;
+  margin-bottom: 24px;
 }
