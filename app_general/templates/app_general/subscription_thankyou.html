@@ -4,9 +4,13 @@
 
 
 {% block content %}
-<h2>ขอบคุณสำหรับการลงทะเบียน</h2>
-<p>คำอธิบายยาว ๆ </p>
-<a href="{% url 'home' %}">กลับหน้าแรก</a>
+<section class="content-section content-section-single">
+    <div class="content-container content-container-narrow">
+        <h2 class="content-title">ขอบคุณสำหรับการลงทะเบียน</h2>
+        <p>คำอธิบายยาว ๆ </p>
+        <a class="button button-primary" href="{% url 'home' %}">กลับหน้าแรก</a>        
+    </div>
+</section>
 {% endblock %}
 
 
