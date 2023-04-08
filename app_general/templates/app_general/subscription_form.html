@@ -8,7 +8,7 @@
     <div class="content-container content-container-narrow">
         <h2 class="content-title">ลงทะเบียนรับโปรโมชั่น</h2>
         <p>กรุณาใส่ข้อมูลจริง เพื่อความสะดวกราบรื่นในการรับโปรโมชั่น</p>
-        <form action="{% url 'subscription' %}" method="post">
+        <form class="subscription-form" action="{% url 'subscription' %}" method="post">
             {% csrf_token %}
             {{ form.non_field_errors}}
             <div class="form-field">
