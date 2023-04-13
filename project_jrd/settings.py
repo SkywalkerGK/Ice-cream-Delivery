@@ -12,8 +12,10 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -38,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app_general.apps.AppGeneralConfig',
-    'app_foods.apps.AppFoodsConfig'
+    'app_foods.apps.AppFoodsConfig',
+    'app_user.apps.AppUserConfig',
     
 ]
 
@@ -128,3 +131,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Auth
+
+LOGIN_REDIRECT_URL  = "home"
+LOGOUT_REDIRECT_URL  = "home"
+
