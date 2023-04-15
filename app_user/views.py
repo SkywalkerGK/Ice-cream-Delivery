@@ -1,5 +1,6 @@
 from django.http import HttpRequest, HttpResponseRedirect
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from app_user.forms import RegisterForm
 from django.contrib.auth import login
@@ -19,3 +20,8 @@ def register(request: HttpRequest):
     # GET    
     context = {"form" : form }
     return render(request, "app_users/register.html",context)
+
+@login_required #ตรวจสอบการ Log in ถ้าไม่มีเข้า Dashboard ไม่ได้
+def dashboard(request: HttpRequest):
+    return render(request, "app_users/dashboard.html")
+

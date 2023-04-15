@@ -5,7 +5,7 @@
 
 {% block content %}
 <section class="content-section content-section-single">
-    <div class="content-container">
+    <div class="content-container content-container-narrow">
         <h3 class="content-title">สมัครสมาชิก</h3>
         <form action="{% url 'register' %}" method="post">
             {% csrf_token %}
