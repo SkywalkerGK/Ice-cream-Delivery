@@ -12,6 +12,6 @@
     <a class="site-header-item" href="{% url 'logout' %}">ออกจากระบบ</a> 
     {% else %}
     <a class="site-header-item" href="{% url 'login' %}">เข้าสู่ระบบ</a>
-    <a class="site-header-item" href="#">สมัครสมาชิก</a>
+    <a class="site-header-item" href="{% url 'register' %}">สมัครสมาชิก</a>
     {% endif %}
 </header>
