@@ -32,7 +32,7 @@ def profile(request: HttpRequest):
     user = request.user
     #POST
     if request.method == 'POST':
-        form = UserProfileForm(request.POST, instance=user) #Saveแบบ USER
+        form = UserProfileForm(request.POST, instance=user) #Saveแบบ USER (โหลดข้อมูลของข้อมูลนั้นเข้ามาใน Modelform)
         is_new_profile = False #User มี Profile
 
         try:  #พยายามอัพเดตดูก่อน
@@ -53,9 +53,12 @@ def profile(request: HttpRequest):
 
             return HttpResponseRedirect(reverse("profile"))
     else:
-        form = UserProfileForm()
-        extended_form = ExtendedProfileForm()
-
+        form = UserProfileForm(instance=user)
+        try:
+            extended_form = ExtendedProfileForm(instance=user.profile)
+        except:
+            extended_form = ExtendedProfileForm()
+     
     #GET
     context = {
         "form": form,

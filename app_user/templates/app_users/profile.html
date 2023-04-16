@@ -1,12 +1,16 @@
 {% extends 'app_general/components/base.html' %}
 
-{% block site_title %}แดชบอร์ด | {% endblock %}
+{% block site_title %}ข้อมูลผูู้ใช้ | {% endblock %}
 
 
 {% block content %}
 <section class="content-section content-section-single">
     <div class="content-container content-container-narrow">
-        <h3 class="content-title">แดชบอร์ดของคุณ {{ user.username }}</h3>
+        <h3 class="content-title">สวัสดี {{ user.username }}</h3>
+        <p>
+            <a href="{% url 'dashboard' %}">แดชบอร์ด</a>
+            <a href="{% url 'profile' %}">โปรไฟล์</a>
+        </p>
         <h5>ข้อมูลผูู้ใช้</h5>
         <form action="{% url 'profile' %}" method="post">
             {% csrf_token %}

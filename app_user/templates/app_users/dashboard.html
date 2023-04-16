@@ -6,7 +6,11 @@
 {% block content %}
 <section class="content-section content-section-single">
     <div class="content-container content-container-narrow">
-        <h3 class="content-title">แดชบอร์ดของคุณ {{ user.username }}</h3>
+        <h3 class="content-title">สวัสดี {{ user.username }}</h3>
+        <p>
+            <a href="{% url 'dashboard' %}">แดชบอร์ด</a>
+            <a href="{% url 'profile' %}">โปรไฟล์</a>
+        </p>
         <p>เข้ามาได้แล้วโว้ยย</p>
 
 

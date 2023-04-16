@@ -13,6 +13,14 @@ class UserProfileForm(forms.ModelForm):
         fields = ("first_name","last_name")
 
 class ExtendedProfileForm(forms.ModelForm):
+    prefix = "extended"
     class Meta:
         model = Profile
         fields = ("address","phone") 
+        locals = {
+            "address": "ที่อยู่",
+            "phone": "เบอร์โทรศัพท์"
+        }
+        widgets = {
+            "address": forms.Textarea(attrs={"rows" : 3})
+        }
