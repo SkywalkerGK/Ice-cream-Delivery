@@ -1,0 +1,43 @@
+{% extends 'app_general/components/base.html' %}
+
+{% block site_title %}แดชบอร์ด | {% endblock %}
+
+
+{% block content %}
+<section class="content-section content-section-single">
+    <div class="content-container content-container-narrow">
+        <h3 class="content-title">แดชบอร์ดของคุณ {{ user.username }}</h3>
+        <h5>ข้อมูลผูู้ใช้</h5>
+        <form action="{% url 'profile' %}" method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors}}
+            <div class="form-field">
+                {{ form.first_name.label_tag }}
+                {{ form.first_name }}
+                {{ form.first_name.errors }}
+            </div>
+            <div class="form-field">
+                {{ form.last_name.label_tag }}
+                {{ form.last_name }}
+                {{ form.last_name.errors }}
+            </div>
+            <div class="form-field">
+                {{ extended_form.address.label_tag }}
+                {{ extended_form.address }}
+                {{ extended_form.address.errors }}
+            </div>
+            <div class="form-field">
+                {{ extended_form.phone.label_tag }}
+                {{ extended_form.phone }}
+                {{ extended_form.phone.errors }}
+            </div>
+            <p>
+                <button class="button button-primary" type="submit">บันทึก</button>
+            </p>
+        </form>
+    </div>
+</section>
+{% endblock %}
+
+
+
