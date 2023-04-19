@@ -1,0 +1,20 @@
+{% extends 'app_general/components/base.html' %}
+
+{% block site_title %}ขอบคุณสำหรัับการสมัครสมาชิก | {% endblock %}
+
+
+{% block content %}
+<section class="content-section content-section-single">
+    <div class="content-container content-container-narrow">
+        <h3 class="content-title">ขอบคุณสำหรัับการสมัครสมาชิก</h3>
+        <p>กรุุณาตรวจสอบอีเมลของคุณ กดลิ้งค์เพื่อ Activate Account</p>
+        <p>
+            <a class="button button-primary" href="{% url 'login' %}">เข้าสู่ระบบ</a>
+        </p>
+
+    </div>
+</section>
+{% endblock %}
+
+
+
